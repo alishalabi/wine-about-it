@@ -13,45 +13,23 @@ module.exports = app => {
       })
   })
 
-// HTTP: New
-app.get("/grapes/new", (req, res) => {
-  res.render("grapes-new", {})
-})
+  // HTTP: New
+  app.get("/grapes/new", (req, res) => {
+    res.render("grapes-new", {})
+  })
 
-// HTTP: Create
-app.post("/grapes", (req, res) => {
-  Grape.create(req.body)
-    .then((grape) => {
-      console.log(grape)
-      res.redirect("/")
-    })
-    .catch((err) => {
-      console.log(err.message)
-    })
-})
+  // HTTP: Create
+  app.post("/grapes", (req, res) => {
+    Grape.create(req.body)
+      .then((grape) => {
+        console.log(grape)
+        res.redirect("/")
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  })
 
-//   // HTTP: Create
-//   app.post("/grapes/new", (req, res) => {
-//     const grape = new Grape(req.body);
-//     grape
-//       .save((err, grape) => {
-//         return res.redirect(`/grapes`)
-//       })
-//     console.log(req.body)
-//   })
-//
-//   // HTTP: Index grapes
-//   app.get("/grapes", (req, res) => {
-//     console.log("Hello World")
-//     Grape.find({})
-//       .then(grapes => {
-//         res.render("grapes-index", { grapes });
-//       })
-//       .catch((err) => {
-//         console.log(err.message)
-//       })
-//   })
-//   //
 //   // // HTTP: New grape
 //   // app.get("/grapes/new", (req, res) => {
 //   //   res.render("grapes-new", {});
