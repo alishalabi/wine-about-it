@@ -1,0 +1,9 @@
+<h2><a href="/">Back Home</a></h2>
+
+<h3><a href="/grapes/new">New</a></h3>
+
+{{#each grapes}}
+  <h4>{{this.name}}</h4>
+  <p>Type: {{this.type}}</p>
+  <p>Pairings: {{this.pairings}}</p>
+{{/each}}
