@@ -3,7 +3,7 @@
 <h3><a href="/grapes/new">New</a></h3>
 
 {{#each grapes}}
-  <h4>{{this.name}}</h4>
+  <h4><a href="/grapes/{{this._id}}"{{this.name}}>{{this.name}}</a></h4>
   <p>Type: {{this.type}}</p>
   <p>Pairings: {{this.pairings}}</p>
 {{/each}}

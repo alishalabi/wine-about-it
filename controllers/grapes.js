@@ -30,6 +30,17 @@ module.exports = app => {
       })
   })
 
+  // HTTP: Show One
+  app.get("/grapes/:id", (req, res) => {
+    Grape.findById(req.params.id)
+      .then((grape) => {
+        res.render("grapes-show", { grape: grape })
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  })
+
 //   // // HTTP: New grape
 //   // app.get("/grapes/new", (req, res) => {
 //   //   res.render("grapes-new", {});
