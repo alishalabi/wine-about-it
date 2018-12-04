@@ -6,6 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const expressValidator = require("express-validator")
 const exphbs = require("express-handlebars");
+const methodOverride = require("method-override");
 
 // Instantiating Express
 const app = express()
@@ -16,6 +17,7 @@ app.set("view engine", "handlebars")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
+app.use(methodOverride("_method"));
 
 // // Connecting Controllers
 require("./controllers/grapes.js")(app)
