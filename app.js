@@ -8,17 +8,20 @@ const bodyParser = require("body-parser");
 const expressValidator = require("express-validator")
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
+const cookieParser = require("cookie-parser")
+const jwt = require("jsonwebtoken")
 
-// Instantiating Express
+// Initalizing Express
 const app = express()
 
-// Integrating middleware
+// Integrating middleware into Express
 app.engine("handlebars", exphbs({defaultLayout: "main"}))
 app.set("view engine", "handlebars")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(methodOverride("_method"));
+app.use(cookieParser())
 
 // // Connecting Controllers
 const grapes = require("./controllers/grapes.js")(app)
