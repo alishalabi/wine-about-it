@@ -16,7 +16,27 @@ UserSchema.pre("save", function(next) {
   if (!this.createdAt) {
     this.createdAt = now;
   }
-  next();
+
+  // Salt encrypt password
+  const user = this;
+  if (!user.isModified("password")) {
+    return next();
+  }
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(user.password, salt, (err, hash) => {
+      user.password = hash;
+      next();
+    })
+  })
 })
+
+// Enabling this.password to work
+UserSchema.methods.comparePasswords = function(pass, done) {
+  bcrypt.compare(password, this.password, (err, isMatch) => {
+    done(err, isMatch)
+  })
+}
+
+
 
 module.exports = mongoose.model("User", UserSchema)

@@ -1,5 +1,6 @@
 // Connect Mongo DB
 require("./data/wine-db")
+require("dotenv").config()
 
 // Middleware
 const express = require("express");
