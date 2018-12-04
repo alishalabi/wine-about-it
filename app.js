@@ -20,11 +20,12 @@ app.use(expressValidator());
 app.use(methodOverride("_method"));
 
 // // Connecting Controllers
-require("./controllers/grapes.js")(app)
-
-module.exports = app;
+const grapes = require("./controllers/grapes.js")(app)
+const auth = require("./controllers/auth.js")(app)
 
 // Listen at port 3000
 app.listen(process.env.PORT || 3000, (req, res) => {
   console.log("Listening at port 3000!")
 })
+
+module.exports = app;

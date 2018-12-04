@@ -12,6 +12,7 @@ module.exports = app => {
         console.log(err.message)
       })
   })
+  
 
   // HTTP: New
   app.get("/grapes/new", (req, res) => {
@@ -22,7 +23,6 @@ module.exports = app => {
   app.post("/grapes", (req, res) => {
     Grape.create(req.body)
       .then((grape) => {
-        console.log(grape)
         res.redirect("/")
       })
       .catch((err) => {
