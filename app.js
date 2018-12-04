@@ -22,6 +22,7 @@ app.use(methodOverride("_method"));
 // // Connecting Controllers
 require("./controllers/grapes.js")(app)
 
+module.exports = app;
 
 // Listen at port 3000
 app.listen(process.env.PORT || 3000, (req, res) => {

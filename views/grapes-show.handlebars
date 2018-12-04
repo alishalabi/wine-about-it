@@ -5,3 +5,6 @@
 <p>{{grape.pairings}}</p>
 
 <p><a href="/grapes/{{grape._id}}/edit">Edit Grape</a></p>
+<p><form method="POST" action="/grapes/{{grape._id}}?_method=DELETE">
+  <button type="submit">Delete Grape</button>
+</form></p>
