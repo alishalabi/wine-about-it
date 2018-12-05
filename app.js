@@ -10,6 +10,7 @@ const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
+const mongoose = require('mongoose');
 // const checkAuth = require("./middleware/checkAuth.js")
 
 
@@ -37,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(methodOverride("_method"));
 app.use(cookieParser())
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/wine-about-it')
 
 // Integrating custom middleware into Express
 app.use(checkAuth)
