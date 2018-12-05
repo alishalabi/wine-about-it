@@ -10,24 +10,24 @@ const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
-const checkAuth = require("./middleware/checkAuth.js")
+// const checkAuth = require("./middleware/checkAuth.js")
 
 
 // Initalizing Express
 const app = express()
 
-// // Integrating custom middleware into Express
-// const checkAuth = (req, res, next) => {
-//   console.log("Checking authencation");
-//   if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
-//     req.user = null
-//   } else {
-//     const token = req.cookies.nToken
-//     const decodedToken = jwt.decode(token, { complete: true}) || {};
-//     req.user = decodedToken.payload;
-//   }
-//   next();
-// }
+// Integrating custom middleware into Express
+const checkAuth = (req, res, next) => {
+  console.log("Checking authencation");
+  if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+    req.user = null
+  } else {
+    const token = req.cookies.nToken
+    const decodedToken = jwt.decode(token, { complete: true}) || {};
+    req.user = decodedToken.payload;
+  }
+  next();
+}
 
 // Integrating npm middleware into Express
 app.engine("handlebars", exphbs({defaultLayout: "main"}))
