@@ -7,13 +7,12 @@
 
     <!-- Navbar: Login/Sign-up -->
     <ul class="nav navbar-nav navbar-right">
-      <!-- {{#if currentUser}}
-        <li><a href="/posts/new">New Post</a></li>
-          {{else}} -->
+      {{#if currentUser}}
         <li><a href="/logout">Logout</a></li>
+      {{else}}
         <li><a href="/login">Login</a></li>
         <li><a href="/sign-up">Sign Up</a></li>
-      <!-- {{/if}} -->
+      {{/if}}
     </ul>
 
   </div>

@@ -1,3 +1,5 @@
+// Data initialization code 
+
 /* Mongoose Connection */
 const mongoose = require("mongoose");
 assert = require("assert");

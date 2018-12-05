@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Grape = mongoose.model("Grape", {
   name: String,
   type: String,
-  pairings: String,
+  pairings: [String],
 })
 
 module.exports = Grape;

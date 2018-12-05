@@ -1,18 +1,20 @@
 const Grape = require("../models/grape")
 
+
 module.exports = app => {
 
   // HTTP: Index
   app.get("/", (req, res) => {
-    Grape.find()
+    var currentUser = req.user
+    Grape.find({})
       .then(grapes => {
-        res.render("grapes-index", { grapes: grapes })
+        res.render("grapes-index", { grapes, currentUser })
       })
       .catch(err => {
         console.log(err.message)
       })
   })
-  
+
 
   // HTTP: New
   app.get("/grapes/new", (req, res) => {
