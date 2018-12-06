@@ -6,7 +6,28 @@ const Grape = require("../models/grape")
 
 chai.use(chaiHttp)
 
-describe("Grapes", () => {
+// Sample Grape Object
+const sampleGrape ={
+  name: "Sample Grape",
+  type: "Red",
+  pairings: ["Beef", "Lamb", "Pasta"],
+  image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Grape_near_Sancerre.jpg"
+}
+
+
+
+
+
+// Grap Controllers
+describe("Testing Grape Controllers", () => {
+
+  // Dump Function
+  after(() => {
+    Grape.deleteMany({ name: })
+  })
+
+
+
 
   // Test Index
   it("should index ALL grapes on / GET", (done) => {
