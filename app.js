@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 // Initalizing Express
 const app = express()
 
-app.use(express.static('public'))
+
 
 // Integrating custom middleware into Express
 const checkAuth = (req, res, next) => {
@@ -40,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(methodOverride("_method"));
 app.use(cookieParser())
+app.use(express.static('public'))
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/wine-about-it')
 
 // Integrating custom middleware into Express

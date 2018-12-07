@@ -66,7 +66,7 @@ module.exports = app => {
     console.log("DELETE grape")
     Grape.findByIdAndRemove(req.params.id)
       .then((review) => {
-        res.redirection("/admin")
+        res.redirect("/admin")
       })
       .catch((err) => {
         console.log(err.message)
