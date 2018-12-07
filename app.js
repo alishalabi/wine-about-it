@@ -17,6 +17,8 @@ const mongoose = require('mongoose');
 // Initalizing Express
 const app = express()
 
+app.use(express.static('public'))
+
 // Integrating custom middleware into Express
 const checkAuth = (req, res, next) => {
   console.log("Checking authencation");
@@ -44,7 +46,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/wine-about-it')
 app.use(checkAuth)
 
 // // Connecting Controllers
-const grapes = require("./controllers/grapes.js")(app)
+const adminGrapes = require("./controllers/admin-grapes.js")(app)
+const displayGrapes = require("./controllers/display-grapes.js")(app)
 const auth = require("./controllers/auth.js")(app)
 
 // Listen at port 3000
