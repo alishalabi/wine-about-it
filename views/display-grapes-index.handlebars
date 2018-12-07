@@ -1,6 +1,27 @@
-{{#each grapes}}
-  <h4><a href="/grapes/{{this._id}}">{{this.name}}</a></h4>
-  <p>Type: {{this.type}}</p>
-  <p>Pairings: {{this.pairings}}</p>
-  <p><img src={{this.image}} alt="Image" height="100px" width="100px"/></p>
-{{/each}}
+<!-- Hero Section -->
+<div class="wine-backgrounds-container">
+  <div class="wine-background bg-1">
+    <!-- <img src="../images/white-wine.jpg" alt="Image"/> -->
+  </div>
+</div>
+
+<!-- Search Bar  -->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="/grapes/5c09870ccab1d77b7f1e6969">Pinot Noir</a></li>
+  <li><a href="#">Pinot Grigio</a></li>
+  <li><a href="#">Sancerre</a></li>
+</ul>
+
+
+<div class="grape-index">
+  {{#each grapes}}
+    <div class="one-grape">
+      <h4><a href="/grapes/{{this._id}}">{{this.name}}</a></h4>
+      <p>Type: {{this.type}}</p>
+      <p>Pairings: {{this.pairings}}</p>
+      <p><img src={{this.image}} alt="Image" height="100px" width="100px"/></p>
+    </div>
+  {{/each}}
+</div>
