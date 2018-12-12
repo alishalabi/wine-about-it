@@ -1,4 +1,4 @@
-// Data initialization code 
+// Data initialization code
 
 /* Mongoose Connection */
 const mongoose = require("mongoose");
