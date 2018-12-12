@@ -6,6 +6,7 @@ const Grape = mongoose.model("Grape", {
   type: String,
   pairings: [String],
   image: String,
+  description: String,
 })
 
 module.exports = Grape;
