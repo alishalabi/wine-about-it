@@ -109,12 +109,12 @@ font-size: 1rem;
   height: calc(100vh - 75px);
   width: 100%;
   /* background: linear-gradient(rgba(44, 62, 80,.6), rgba(44, 62, 80,.6)); */
-  background-image: url("../images/white-wine.jpg");
+  background-image: url("../images/choose-wine.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0px;
-  filter:grayscale(20%) blur(0px);
+  filter:grayscale(30%) blur(0px);
 }
 
 .grape-index {
