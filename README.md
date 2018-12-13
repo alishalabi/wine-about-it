@@ -1,5 +1,7 @@
 Welcome to "Wine About It" - an automatic wine/food pairing service.
 
+Brochure Page: https://alishalabi.github.io/wine-about-it/
+
 This is a full-stack Node.js/Express.js project, that has both back-end and front-end components.
 
 Dependencies:
