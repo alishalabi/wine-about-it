@@ -12,21 +12,18 @@ const User = require('../models/user')
 const Grape = require('../models/grape');
 
 /** Test objects */
-const testProfile = {
-    username: "testBob123",
-    password: "bestpassword123"
+const testGrape1 = {
+  name: "Test Pinot",
+  type: "Full-Bodied Red",
+  pairings: ["Chicken", "Beef"],
+  image: "upload.wikimedia.org/wikipedia/commons/3/32/Red_Mountain_Cabernet_Sauvignon_grapes_from_Hedge_Vineyards.jpg",
+  description: "Super Good",
 }
 
-const fakeAsparagus = {
-    name: "fakeAsparagus",
-    describe: "this is not asparagus",
-    CO2e: 1000
-}
-
-describe('Foods', () => {
+describe('Grapes', () => {
 
     // FOOD INDEX
-    it('should index all foods on /GET', (done) => {
+    it('should index all grapes on /GET', (done) => {
         chai.request(server)
         .get('/profiles/5c083a79abc27e1906854e5d/foods')
         .end((err, res) => {
@@ -37,8 +34,8 @@ describe('Foods', () => {
     });
 
     // TEST CREATE FOOD
-    it('should create a single food on /profiles/<id>/foods', (done) => {
-        var profile = new Profile(testProfile);
+    it('should create a single grape on /grapes/<id>/new', (done) => {
+        var testGrape2 = new Grape(testProfile);
         profile.save((err, user) => {
             chai.request(server)
                 .post(`/profiles/${user._id}/foods`)
@@ -51,4 +48,14 @@ describe('Foods', () => {
             });
         })
     }).timeout(4000);
+
+
+    // Test Create New
+    it("Should create new grape", (done) => {
+      Grape.find({})
+        .then(grapes => {
+          const originalGrapeLength = grapes.count
+          chai.request(server)
+        })
+    })
 })

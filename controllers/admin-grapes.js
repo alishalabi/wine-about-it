@@ -1,5 +1,5 @@
 const Grape = require("../models/grape")
-const requiresLogin = require("./requires-login")
+const requiresLogin = require("./helpers/requires-login")
 
 
 module.exports = app => {
