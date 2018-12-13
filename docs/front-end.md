@@ -8,6 +8,7 @@ More information can be found via the following documentation: https://developer
 
 *****
 
+```
 <!-- HTML Markup -->
 <div class="one-grape-card">
   <div class="one-grape-image">
@@ -31,6 +32,6 @@ More information can be found via the following documentation: https://developer
     window.speechSynthesis.speak(utterThis);
   }
 </script>
-
+```
 
 *****
