@@ -1,48 +1,54 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../controllers/grapes');
+const server = require('../app');
+
 const should = chai.should();
-const Grape = require("../models/grape")
+chai.use(chaiHttp);
 
-chai.use(chaiHttp)
+const agent = chai.request.agent(server);
 
-// Sample Grape Object
-const sampleGrape ={
-  name: "Sample Grape",
-  type: "Red",
-  pairings: ["Beef", "Lamb", "Pasta"],
-  image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Grape_near_Sancerre.jpg"
+/** Require Models */
+const User = require('../models/user')
+const Grape = require('../models/grape');
+
+/** Test objects */
+const testProfile = {
+    username: "testBob123",
+    password: "bestpassword123"
 }
 
+const fakeAsparagus = {
+    name: "fakeAsparagus",
+    describe: "this is not asparagus",
+    CO2e: 1000
+}
 
+describe('Foods', () => {
 
+    // FOOD INDEX
+    it('should index all foods on /GET', (done) => {
+        chai.request(server)
+        .get('/profiles/5c083a79abc27e1906854e5d/foods')
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.should.be.html;
+            done();
+        });
+    });
 
-
-// Grap Controllers
-describe("Testing Grape Controllers", () => {
-
-  // Dump Function
-  after(() => {
-    Grape.deleteMany({ name: })
-  })
-
-
-
-
-  // Test Index
-  it("should index ALL grapes on / GET", (done) => {
-    const res = chai.request(app).get("/")
-    res.should.have.status(200)
-    res.should.be.html
-    // chai.request(app)
-    //   .get(`/`)
-    //   .end((err, res) => {
-    //     res.should.have.status(200)
-    //     res.should.be.html
-    //     done()
-    //   })
-  })
-
-
-
+    // TEST CREATE FOOD
+    it('should create a single food on /profiles/<id>/foods', (done) => {
+        var profile = new Profile(testProfile);
+        profile.save((err, user) => {
+            chai.request(server)
+                .post(`/profiles/${user._id}/foods`)
+                .send(fakeAsparagus)
+                .end((err, res) => {
+                    console.log("success!")
+                    res.should.have.status(200);
+                    res.should.be.html;
+                    done();
+            });
+        })
+    }).timeout(4000);
 })
