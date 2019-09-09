@@ -2,7 +2,7 @@
 module.exports = () => {
   const checkAuth = (req, res, next) => {
     console.log("Checking authencation");
-    if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+    if (typeof req.cookies.nToken2 === "undefined" || req.cookies.nToken2 === null) {
       req.user = null
     } else {
       const token = req.cookies.nToken

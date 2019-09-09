@@ -18,7 +18,6 @@ const mongoose = require('mongoose');
 const app = express()
 
 
-
 // Integrating custom middleware into Express
 const checkAuth = (req, res, next) => {
   console.log("Checking authencation");

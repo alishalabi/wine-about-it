@@ -1,61 +1,61 @@
 body {
   margin: 0px;
   background-color: #210303;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: white;
   text-decoration: none;
 }
 
 h4 {
-color: yellow;
+  color: yellow;
 }
 
 /* Hero Section */
 .hero {
-height: calc(100vh - 125px);
-width: 100%;
-/* background: linear-gradient(rgba(44, 62, 80,.6), rgba(44, 62, 80,.6)); */
-background-image: url("../images/vineyard.jpg");
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-padding: 0px;
-/* filter: hue-rotate(-100deg) brightness(50%); */
+  height: calc(100vh - 125px);
+  width: 100%;
+  /* background: linear-gradient(rgba(44, 62, 80,.6), rgba(44, 62, 80,.6)); */
+  background-image: url("../images/vineyard.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px;
+  /* filter: hue-rotate(-100deg) brightness(50%); */
 }
 
 .hero-text {
-z-index: 5;
-height: calc(100vh - 50px);
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-color: white;
-font-family: "Trattatello";
-filter: none;
+  z-index: 5;
+  height: calc(100vh - 50px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Trattatello";
+  filter: none;
 }
 
 .hero-text h1 {
-margin-top: 0rem;
-font-size: 7rem;
-font-weight: 200;
-color: lighten(white, 50%);
-filter: none;
+  margin-top: 0rem;
+  font-size: 7rem;
+  font-weight: 200;
+  color: white;
+  filter: none;
 }
 
-.homepage-selection{
-display: flex;
-justify-content: center;
+.homepage-selection {
+  display: flex;
+  justify-content: center;
 }
 
 .homepage-selection-card {
-vertical-align: top;
-padding-left: 3.5em;
-padding-right: 3.5em;
-display: inline-block;
-text-align: center;
-width: 200px;
+  vertical-align: top;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  display: inline-block;
+  text-align: center;
+  width: 200px;
 }
 
 .homepage-selection-card img {
@@ -67,22 +67,22 @@ width: 200px;
 }
 
 .homepage-selection-card h3 {
-color: white;
-font-size: 2rem;
-margin-bottom: 10px;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .homepage-selection-card p {
-color: white;
-font-size: .75rem;
+  color: white;
+  font-size: 0.75rem;
 }
 
 .how-it-works {
-text-align: center;
-color: white;
-width: 100%;
-display: flex;
-justify-content: center;
+  text-align: center;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .how-it-works-card {
@@ -90,19 +90,19 @@ justify-content: center;
   margin-top: 75px;
 }
 
-.how-it-works-card h2{
-margin-bottom: 40px;
-font-size: 3rem;
-margin-top: 0px;
+.how-it-works-card h2 {
+  margin-bottom: 40px;
+  font-size: 3rem;
+  margin-top: 0px;
 }
 
 .how-it-works-card p {
-color: white;
+  color: white;
 }
 
 .how-it-works p {
-text-align: center;
-font-size: 1rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .wine-backgrounds-container {
@@ -114,7 +114,7 @@ font-size: 1rem;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0px;
-  filter:grayscale(30%) blur(0px);
+  filter: grayscale(30%) blur(0px);
 }
 
 .grape-index {
@@ -126,13 +126,13 @@ font-size: 1rem;
   text-align: center;
 }
 
-.grape-index-card h4{
-  font-family: 'Lato', sans-serif;
+.grape-index-card h4 {
+  font-family: "Lato", sans-serif;
   color: white;
   font-size: 35px;
 }
 
-.grape-index-card img{
+.grape-index-card img {
   border-radius: 90%;
 }
 
@@ -140,10 +140,10 @@ font-size: 1rem;
   height: calc(100vh - 20vh);
   width: 100%;
 }
+
 .one-grape-card {
   display: flex;
   justify-content: center;
-
 }
 
 .one-grape-image {
@@ -151,6 +151,7 @@ font-size: 1rem;
   height: 50%;
   text-align: center;
 }
+
 .one-grape-image img {
   height: 300px;
   width: 300px;
@@ -164,3 +165,9 @@ font-size: 1rem;
   border-style: groove;
   padding: 10px;
 }
+
+.help {
+  color: yellow;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
