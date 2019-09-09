@@ -2,6 +2,8 @@ $color-alert: yellow;
 $bg-color: #210303;
 $fore-color: white;
 $font-stack: 'Lato', sans-serif;
+$font-hero: "Trattatello";
+$filter-background: grayscale(30%) blur(0px);
 
 body {
   margin: 0px;
@@ -37,7 +39,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 color: $fore-color;
-font-family: "Trattatello";
+font-family: $font-hero;
 filter: none;
 }
 
@@ -119,7 +121,7 @@ font-size: 1rem;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0px;
-  filter:grayscale(30%) blur(0px);
+  filter: $filter-background;
 }
 
 .grape-index {
@@ -132,8 +134,8 @@ font-size: 1rem;
 }
 
 .grape-index-card h4{
-  font-family: 'Lato', sans-serif;
-  color: white;
+  font-family: $font-stack;
+  color: $fore-color;
   font-size: 35px;
 }
 
